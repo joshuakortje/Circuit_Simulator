@@ -4,6 +4,7 @@
 #define WIRE_h
 
 #include <vector>
+#include <string>
 using namespace std;
 
 class Gate;
@@ -16,6 +17,7 @@ public:
 	Wire(int newNumber);
 	~Wire();
 	int getValue();
+	int getNumber() { return number; }
 	void updateWire( int newValue);
 	void addGate(Gate* newGate);
 private:

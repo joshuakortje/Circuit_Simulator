@@ -85,7 +85,7 @@ int Gate::runGateLogic() {
 				return LOW;
 			}
 		}
-		else if ((input1->getValue() == LOW) && (input2->getValue == LOW)) { //both are low
+		else if ((input1->getValue() == LOW) && (input2->getValue() == LOW)) { //both are low
 			if (type == "OR") {
 				return LOW;
 			}
