@@ -6,6 +6,14 @@
 #include "Gate.h"
 
 class Event {
+public:
+	Event(int newTime, string newWire, int newValue, int newCount);
+	int getTime();
+	string getWire();
+	int getValue();
+	int getCount();
+
+	friend bool operator<(const Event &lhs, const Event &rhs);
 
 private:
 	int time;

@@ -1,17 +1,24 @@
 #pragma once
+
+#ifndef INPUT_H
+#define INPUT_H
+
 #include <iostream>
 #include <string>
 #include "Wire.h"
 
+using namespace std;
 
 class Input {
 public:
-	Input(std::string newName, Wire *newInputWire);
-
-	std::string getName() { return name; }
-
+	Input(string newName, Wire *newInputWire);
+	string getName() { return name; }
 	void setValue(int newValue);
+
 private:
-	std::string name;
+	string name;
 	int value;
+	Wire *inputWire;
 };
+
+#endif //INPUT_H
