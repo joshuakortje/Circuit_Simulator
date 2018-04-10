@@ -159,6 +159,7 @@
     <ClCompile Include="Circuit Simulator.cpp" />
     <ClCompile Include="Gate.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Output.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

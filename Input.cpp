@@ -5,7 +5,8 @@
 
 using namespace std;
 
-Input::Input(string newName, int newValue) : name(newName), value(newValue) {
+Input::Input(string newName, Wire *newInputWire) : name(newName) {
+	newInputWire = nullptr;
 }
 
 void Input::setValue(int newValue) {

@@ -1,20 +1,21 @@
 #pragma once
 
-#ifndef OUTPUT_H
-#define OUTPUT_H
+//#ifndef OUTPUT_H
+//#define OUTPUT_H
 
 #include "Wire.h"
+#include <string>
 
 class Output {
 public:
-	Output(string newName, Wire *newInputWire);
-	void updateOutput(int newValue);
-	int getOutput();
+	Output(std::string newName, Wire *newInputWire);
+	void setValue(int newValue);
+	int getValue() { return value; }
 
 private:
-	string name;
+	std::string name;
 	int value;
 };
 
 
-#endif //OUTPUT_H
+//#endif //OUTPUT_H

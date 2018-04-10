@@ -1,10 +1,12 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Wire.h"
+
 
 class Input {
 public:
-	Input(std::string newName, int newValue);
+	Input(std::string newName, Wire *newInputWire);
 
 	std::string getName() { return name; }
 
