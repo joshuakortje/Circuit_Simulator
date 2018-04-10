@@ -1,0 +1,8 @@
+CIRCUIT SimpleCircuit
+INPUT   A    1
+INPUT   B    2
+INPUT  C    3
+OUTPUT OUT1 4
+OUTPUT  OUT2    5
+AND     3ns  1   2   4
+OR     2ns 4 3 5

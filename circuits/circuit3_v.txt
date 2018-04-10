@@ -1,0 +1,6 @@
+VECTOR Circuit3
+INPUT A  1  1
+INPUT B  1  0
+INPUT C  1  0
+INPUT B  7  1
+INPUT A  7  0

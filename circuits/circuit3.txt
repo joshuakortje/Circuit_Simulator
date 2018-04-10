@@ -1,0 +1,9 @@
+CIRCUIT Circuit3
+INPUT   A    1
+INPUT   B    2
+INPUT   C    3
+OUTPUT  D    5
+OUTPUT  E    6
+AND     2ns  1   2   4
+OR      3ns  4   3   5
+NOT     1ns  4   6
