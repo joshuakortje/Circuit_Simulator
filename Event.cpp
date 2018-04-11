@@ -6,11 +6,14 @@
 
 using namespace std;
 
-/*Event::Event(int newTime, string newWire, int newValue, int newCount) : time(newTime), wire(newWire), value(newValue), count(newCount) {
-	// Empty - because everything is already done in base initialization
-}*/
+int Event::runningCount = 0;
+
 Event::Event(int newTime, string newWire, int newValue) : time(newTime), wire(newWire), value(newValue) {
-	// Empty - because everything is already done in base initialization
+
+	// This keeps track of how many events have been created and assigns count that number
+	// It makes it so we know exactly what order things should go in
+	count = runningCount;
+	runningCount++;
 }
 
 bool operator<(const Event &lhs, const Event &rhs) {

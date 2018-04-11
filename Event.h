@@ -5,7 +5,6 @@
 
 class Event {
 public:
-	//Event(int newTime, string newWire, int newValue, int newCount);
 	Event(int newTime, std::string newWire, int newValue);
 	int			getTime()	const { return time; } 
 	std::string	getWire()	const { return wire; } 
@@ -19,6 +18,8 @@ private:
 	std::string wire;
 	int value;
 	int count;
+
+	static int runningCount;
 };
 
 #endif //EVENT_H
