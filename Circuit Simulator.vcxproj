@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Circuit Simulator.cpp" />
+    <ClCompile Include="Event.cpp" />
     <ClCompile Include="Gate.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Output.cpp" />

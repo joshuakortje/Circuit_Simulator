@@ -9,11 +9,6 @@ Wire::Wire(int newNumber) : number(newNumber) {
 	value = UNKNOWN;
 }
 
-// Destructor
-Wire::~Wire() {
-
-}
-
 // Gets the value of the Wire
 int Wire::getValue(){
 	// return the value on the Wire

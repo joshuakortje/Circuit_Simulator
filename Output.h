@@ -17,6 +17,7 @@ public:
 private:
 	string name;
 	int value;
+	vector<int> history;
 };
 
 

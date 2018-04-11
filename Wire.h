@@ -15,7 +15,6 @@ const int UNKNOWN = -1;
 class Wire {
 public:
 	Wire(int newNumber);
-	~Wire();
 	int getValue();
 	int getNumber() { return number; }
 	void updateWire( int newValue);

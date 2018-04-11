@@ -1,23 +1,22 @@
-#pragma once
-
 #ifndef EVENT_H
 #define EVENT_H
 
-#include "Gate.h"
+#include <string>
 
 class Event {
 public:
-	Event(int newTime, string newWire, int newValue, int newCount);
-	int getTime();
-	string getWire();
-	int getValue();
-	int getCount();
+	//Event(int newTime, string newWire, int newValue, int newCount);
+	Event(int newTime, std::string newWire, int newValue);
+	int			getTime()	const { return time; } 
+	std::string	getWire()	const { return wire; } 
+	int			getValue()	const { return value; } 
+	int			getCount()	const { return count; } 
 
 	friend bool operator<(const Event &lhs, const Event &rhs);
 
 private:
 	int time;
-	string wire;
+	std::string wire;
 	int value;
 	int count;
 };

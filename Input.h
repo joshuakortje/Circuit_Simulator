@@ -19,6 +19,7 @@ private:
 	string name;
 	int value;
 	Wire *inputWire;
+	vector<int> history;
 };
 
 #endif //INPUT_H

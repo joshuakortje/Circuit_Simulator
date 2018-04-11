@@ -12,11 +12,6 @@ Gate::Gate(string newType, int newDelay, Wire *newInput1, Wire *newInput2, Wire 
 	output = newOutput;
 }
 
-// Destructor
-Gate::~Gate() {
-
-}
-
 // get the type of Gate
 string Gate::getType()
 {
