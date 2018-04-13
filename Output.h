@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
@@ -12,8 +10,10 @@ class Output {
 public:
 	Output(string newName);
 	void setValue(int newValue);
-	int getValue() { return value; }
-
+	
+	string		getName()		{ return name; }
+	int			getValue()		{ return value; }
+	vector<int> getHistory()	{ return history; }
 private:
 	string name;
 	int value;
