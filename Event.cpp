@@ -8,7 +8,7 @@ using namespace std;
 
 int Event::runningCount = 0;
 
-Event::Event(int newTime, string newWire, int newValue) : time(newTime), wire(newWire), value(newValue) {
+Event::Event(int newTime, Wire* newWire, int newValue) : time(newTime), wire(newWire), value(newValue) {
 
 	// This keeps track of how many events have been created and assigns count that number
 	// It makes it so we know exactly what order things should go in
@@ -24,4 +24,9 @@ bool operator<(const Event &lhs, const Event &rhs) {
 	}
 
 	return lhs.getTime() > rhs.getTime();
+}
+
+//this will execute the event
+void Event::execute() {
+	wire->updateWire(value);
 }

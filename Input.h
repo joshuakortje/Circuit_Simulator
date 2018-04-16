@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef INPUT_H
 #define INPUT_H
 
@@ -14,6 +12,9 @@ public:
 	Input(string newName, Wire *newInputWire);
 	string getName() { return name; }
 	void setValue(int newValue);
+	Wire* getWire();
+	int readHistory();
+	void addHistory(int newHistory);
 
 private:
 	string name;

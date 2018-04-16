@@ -15,8 +15,10 @@ public:
 	Gate(string newType, int newDelay, Wire *newInput1, Wire *newInput2, Wire *newOutput);
 	string getType();
 	void updateGate();
-	bool checkOutputChange();
-	int runGateLogic(); // it did have Wire *newInput, int input as parameters
+	int getDelay();
+	Wire* getOuput();
+	bool checkOutputChange(Wire *changedWire, int newValue);
+	int runGateLogic(Wire *changedWire = nullptr, int newValue = 0);
 	int getCurrentOutput(); 
 private:
 	string type;

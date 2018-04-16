@@ -11,17 +11,21 @@ class Gate;
 const int HIGH = 1;
 const int LOW = 0;
 const int UNKNOWN = -1;
+const int EMPTY_HISTORY = -2;
 
 class Wire {
 public:
-	Wire(int newNumber);
+	Wire(int newNumber, string name);
 	int getValue();
-	int getNumber() { return number; }
+	int getNumber() const { return number; }
+	string getName() const { return name; }
 	void updateWire( int newValue);
 	void addGate(Gate* newGate);
+	vector<Gate *> getNextGates();
 private:
 	int value;
 	int number;
+	string name;
 	vector<Gate *> nextGates;
 };
 

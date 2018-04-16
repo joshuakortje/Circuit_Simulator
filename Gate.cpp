@@ -19,16 +19,29 @@ string Gate::getType()
 	return type;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//We probably don't need this because the simulator should be able to update the wires directly
 //Update the Gate
 void Gate::updateGate() {
 	// give the output wire the new value from the Gate logic
 	output->updateWire(runGateLogic());
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//returns the delay of the gate
+int Gate::getDelay() {
+	return delay;
+}
+
+//returns the output gate
+Wire* Gate::getOuput() {
+	return output;
+}
 
 // check if the output will change
-bool Gate::checkOutputChange() {
+bool Gate::checkOutputChange(Wire *changedWire, int newValue) {
 	//if the current output is the same as the calculated output no change
-	if (getCurrentOutput() == runGateLogic()) {
+	if (runGateLogic() == runGateLogic(changedWire, newValue)) {
 		return false;
 	}
 	else {
@@ -38,12 +51,28 @@ bool Gate::checkOutputChange() {
 }
 
 // Gate logic
-int Gate::runGateLogic() {
+int Gate::runGateLogic(Wire *changedWire, int newValue) {
+	//account for a possible change in one of the wires
+	//default scenario is with no changed wire
+	int in1 = input1->getValue();
+	int in2;
+	if (type != "NOT") { // make sure to account for the 1 input gate
+		in2 = input2->getValue();
+	}
+	if (changedWire != nullptr) { //watch out for when input2 is a nullptr (NOT gate)
+		if (changedWire == input1) { //the first wire was changed
+			in1 = newValue;
+		}
+		else if (changedWire == input2) { // the secound wire was changed
+			in2 = newValue;
+		}
+	}
+
 	if (type == "NOT") { // NOT gates
-		if (input1->getValue() == LOW) {
+		if (in1 == LOW) {
 			return HIGH;
 		}
-		else if (input1->getValue() == HIGH) {
+		else if (in1 == HIGH) {
 			return LOW;
 		}
 		else {
@@ -51,7 +80,7 @@ int Gate::runGateLogic() {
 		}
 	}
 	else if ((type == "AND") || (type == "NAND")) { // AND or NAND gates
-		if ((input1->getValue() == LOW) || (input2->getValue() == LOW)) { //either one is low
+		if ((in1 == LOW) || (in2 == LOW)) { //either one is low
 			if (type == "AND") {
 				return LOW;
 			}
@@ -59,7 +88,7 @@ int Gate::runGateLogic() {
 				return HIGH;
 			}
 		}
-		else if ((input1->getValue() == HIGH) && (input2->getValue() == HIGH)) { // both high
+		else if ((in1 == HIGH) && (in2 == HIGH)) { // both high
 			if (type == "AND") {
 				return HIGH;
 			}
@@ -72,7 +101,7 @@ int Gate::runGateLogic() {
 		}
 	}
 	else if ((type == "OR") || (type == "NOR")) { // OR and NOR gates
-		if ((input1->getValue() == HIGH) || (input2->getValue() == HIGH)) { //either one is high
+		if ((in1 == HIGH) || (in2 == HIGH)) { //either one is high
 			if (type == "OR") {
 				return HIGH;
 			}
@@ -80,7 +109,7 @@ int Gate::runGateLogic() {
 				return LOW;
 			}
 		}
-		else if ((input1->getValue() == LOW) && (input2->getValue() == LOW)) { //both are low
+		else if ((in1 == LOW) && (in2 == LOW)) { //both are low
 			if (type == "OR") {
 				return LOW;
 			}
@@ -93,10 +122,10 @@ int Gate::runGateLogic() {
 		}
 	}
 	else { // XOR and XNOR gates
-		if ((input1->getValue() == UNKNOWN) || (input2->getValue() == UNKNOWN)) { //if either one is unknown we don't have enough info
+		if ((in1 == UNKNOWN) || (in2 == UNKNOWN)) { //if either one is unknown we don't have enough info
 			return UNKNOWN;
 		}
-		else if(input1->getValue() == input2->getValue()) { //inputs are the same
+		else if(in1 == in2) { //inputs are the same
 			if (type == "XOR") {
 				return LOW;
 			}
@@ -115,8 +144,11 @@ int Gate::runGateLogic() {
 	}
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//We probably don't need this because we could call reunGateLogic() directly
 //get the current output
 int Gate::getCurrentOutput() {
 	//return the value of the output Wire
-	return output->getValue();
+	return runGateLogic();
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

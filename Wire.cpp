@@ -3,7 +3,7 @@
 #include "Gate.h"
 
 // Constructor
-Wire::Wire(int newNumber) : number(newNumber) {
+Wire::Wire(int newNumber, string name) : number(newNumber), name(name) {
 	// intitialize the value and number
 	//there are no known gates so we leave the vector empty
 	value = UNKNOWN;
@@ -25,4 +25,8 @@ void Wire::updateWire(int newValue){
 void Wire::addGate(Gate * newGate){
 	// put the new Gate at the back of the vector
 	nextGates.push_back(newGate);
+}
+
+vector<Gate *> Wire::getNextGates() {
+	return nextGates;
 }
