@@ -41,3 +41,7 @@ Thumbs.db
 .vs
 Debug
 x64
+*.vcxproj
+*.suo
+*.sln
+*.filters
