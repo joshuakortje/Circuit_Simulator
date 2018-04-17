@@ -36,6 +36,8 @@
 ehthumbs.db
 Thumbs.db
 
+.*
+!/.gitignore
 .vs
 Debug
 x64
