@@ -12,14 +12,19 @@ class Wire;
 
 class Gate {
 public:
+	
+	// Constructor
 	Gate(string newType, int newDelay, Wire *newInput1, Wire *newInput2, Wire *newOutput);
-	string getType();
-	void updateGate();
-	int getDelay();
-	Wire* getOuput();
+	
+	// Member functions
 	bool checkOutputChange(Wire *changedWire, int newValue);
 	int runGateLogic(Wire *changedWire = nullptr, int newValue = 0);
-	int getCurrentOutput(); 
+
+	// Getters
+	string	getType()	const { return type;	}
+	int		getDelay()	const { return delay;	}
+	Wire*	getOuput()	const { return output;	}
+
 private:
 	string type;
 	int delay;
