@@ -15,23 +15,31 @@ const int EMPTY_HISTORY = -2;
 
 class Wire {
 public:
+
+	// Constructor
 	Wire(int newNumber, string name, bool InOut);
-	int getValue();
-	bool getInOut();
-	int getNumber() const { return number; }
-	string getName() const { return name; }
+
+	// Member Functions
 	void updateWire( int newValue);
-	void addGate(Gate* newGate);
-	vector<Gate *> getNextGates();
-	void addHistory(int newHistory);
 	int readHistory();
 
+	// Adders
+	void addGate(Gate* newGate);
+	void addHistory(int newHistory);
+
+	// Getters
+	bool			getInOut()		const { return isInOut;		}
+	int				getValue()		const { return value;		}
+	int				getNumber()		const { return number;		}
+	string			getName()		const { return name;		}
+	vector<Gate *>	getNextGates()	const { return nextGates;	}
+
 private:
-	bool isInOut; //true for inputs and outputs
+	bool isInOut;				// True for inputs and outputs
 	int value;
 	int number;
 	string name;
-	vector<Gate *> nextGates;
+	vector<Gate *> nextGates;	// List of all gates driven by wire
 	vector<int> history;
 };
 

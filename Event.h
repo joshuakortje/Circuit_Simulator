@@ -7,13 +7,20 @@ using namespace std;
 
 class Event {
 public:
+
+	// Constructor
 	Event(int newTime, Wire* newWire, int newValue);
+
+	// Member Functions
+	void execute();
+
+	// Getters
 	int			getTime()	const { return time; } 
 	Wire*		getWire()	const { return wire; } 
 	int			getValue()	const { return value; } 
 	int			getCount()	const { return count; } 
-	void		execute();
 
+	// Friend Functions
 	friend bool operator<(const Event &lhs, const Event &rhs);
 
 private:

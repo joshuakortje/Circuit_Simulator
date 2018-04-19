@@ -12,32 +12,6 @@ Gate::Gate(string newType, int newDelay, Wire *newInput1, Wire *newInput2, Wire 
 	output = newOutput;
 }
 
-// get the type of Gate
-string Gate::getType()
-{
-	//return the type
-	return type;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//We probably don't need this because the simulator should be able to update the wires directly
-//Update the Gate
-void Gate::updateGate() {
-	// give the output wire the new value from the Gate logic
-	output->updateWire(runGateLogic());
-}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//returns the delay of the gate
-int Gate::getDelay() {
-	return delay;
-}
-
-//returns the output gate
-Wire* Gate::getOuput() {
-	return output;
-}
-
 // check if the output will change
 bool Gate::checkOutputChange(Wire *changedWire, int newValue) {
 	//if the current output is the same as the calculated output no change
@@ -143,12 +117,3 @@ int Gate::runGateLogic(Wire *changedWire, int newValue) {
 		}
 	}
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//We probably don't need this because we could call reunGateLogic() directly
-//get the current output
-int Gate::getCurrentOutput() {
-	//return the value of the output Wire
-	return runGateLogic();
-}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
