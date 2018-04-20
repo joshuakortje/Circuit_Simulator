@@ -1,7 +1,5 @@
-#pragma once
-
 #ifndef WIRE_H
-#define WIRE_h
+#define WIRE_H
 
 #include <vector>
 #include <string>
