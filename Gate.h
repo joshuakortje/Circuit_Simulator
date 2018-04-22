@@ -21,7 +21,6 @@ public:
 	int runGateLogic(Wire *changedWire = nullptr, int newValue = 0);
 
 	// Getters
-	string	getType()	const { return type;	}
 	int		getDelay()	const { return delay;	}
 	Wire*	getOuput()	const { return output;	}
 

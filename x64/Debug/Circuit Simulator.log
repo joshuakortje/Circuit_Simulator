@@ -1,1 +1,7 @@
-﻿  Circuit Simulator.vcxproj -> \\Mac\Home\Desktop\Circuit_Simulator-New\Circuit_Simulator-master\x64\Debug\Circuit Simulator.exe
+﻿  Circuit Simulator.cpp
+c:\users\jkort\documents\github\circuit_simulator\circuit simulator.cpp(88): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Wire.cpp
+  Gate.cpp
+  Circuit Simulator.vcxproj -> C:\Users\jkort\Documents\GitHub\Circuit_Simulator\x64\Debug\Circuit Simulator.exe
