@@ -15,19 +15,6 @@ void Wire::updateWire(int newValue){
 	value = newValue;
 }
 
-//return the front of the vector and remove it
-int Wire::readHistory() {
-	if (history.size() == 0) {
-		return EMPTY_HISTORY;
-	}
-	else {
-		int temp = history.front();
-		history.erase(history.begin());
-		return temp;
-	}
-}
-
-
 // Adder Implementations
 
 // Adds a gate to the end of the Wire

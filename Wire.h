@@ -9,7 +9,6 @@ class Gate;
 const int HIGH = 1;
 const int LOW = 0;
 const int UNKNOWN = -1;
-const int EMPTY_HISTORY = -2;
 
 class Wire {
 public:
@@ -19,7 +18,6 @@ public:
 
 	// Member Functions
 	void updateWire( int newValue);
-	int readHistory();
 
 	// Adders
 	void addGate(Gate* newGate);
@@ -31,6 +29,7 @@ public:
 	int				getNumber()		const { return number;		}
 	string			getName()		const { return name;		}
 	vector<Gate *>	getNextGates()	const { return nextGates;	}
+	vector<int>		getHistory()	const { return history;		}	
 
 private:
 	bool isInOut;				// True for inputs and outputs
