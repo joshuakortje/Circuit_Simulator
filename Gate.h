@@ -15,8 +15,8 @@ public:
 	Gate(string newType, int newDelay, Wire *newInput1, Wire *newInput2, Wire *newOutput);
 	
 	// Member functions
-	bool checkOutputChange(Wire *changedWire, int newValue);
-	int runGateLogic(Wire *changedWire = nullptr, int newValue = 0);
+	bool checkOutputChange(Wire *changedWire, int newValue) const;
+	int runGateLogic(Wire *changedWire = nullptr, int newValue = 0) const;
 
 	// Getters
 	int		getDelay()	const { return delay;	}

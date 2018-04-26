@@ -1,10 +1,9 @@
-﻿  Circuit Simulator.cpp
-\\mac\home\desktop\circuit_simulator-backup\circuit simulator.cpp(101): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-\\mac\home\desktop\circuit_simulator-backup\circuit simulator.cpp(108): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-\\mac\home\desktop\circuit_simulator-backup\circuit simulator.cpp(119): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+﻿  Gate.cpp
+  Circuit Simulator.cpp
+c:\users\jkort\documents\github\circuit_simulator\circuit simulator.cpp(105): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\jkort\documents\github\circuit_simulator\circuit simulator.cpp(112): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\jkort\documents\github\circuit_simulator\circuit simulator.cpp(123): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Generating Code...
-  Compiling...
+  Skipping... (no relevant changes detected)
   Wire.cpp
-  Gate.cpp
-  Generating Code...
-  Circuit Simulator.vcxproj -> \\Mac\Home\Desktop\Circuit_Simulator-backup\x64\Debug\Circuit Simulator.exe
+  Circuit Simulator.vcxproj -> C:\Users\jkort\Documents\GitHub\Circuit_Simulator\x64\Debug\Circuit Simulator.exe

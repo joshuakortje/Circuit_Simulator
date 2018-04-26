@@ -13,7 +13,7 @@ Gate::Gate(string newType, int newDelay, Wire *newInput1, Wire *newInput2, Wire 
 }
 
 // check if the output will change
-bool Gate::checkOutputChange(Wire *changedWire, int newValue) {
+bool Gate::checkOutputChange(Wire *changedWire, int newValue) const {
 	//if the current output is the same as the calculated output no change
 	if (runGateLogic() == runGateLogic(changedWire, newValue)) {
 		return false;
@@ -25,7 +25,7 @@ bool Gate::checkOutputChange(Wire *changedWire, int newValue) {
 }
 
 // Gate logic
-int Gate::runGateLogic(Wire *changedWire, int newValue) {
+int Gate::runGateLogic(Wire *changedWire, int newValue) const {
 	//account for a possible change in one of the wires
 	//default scenario is with no changed wire
 	int in1 = input1->getValue();
